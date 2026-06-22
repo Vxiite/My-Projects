@@ -15,7 +15,7 @@ To continuously develop this lab environment and simulate deeper enterprise secu
   * Validate that the custom **Fine-Grained Password Policy (FGPP)** successfully prevents credential exhaustion through account lockout mechanisms.
   * Audit and capture Windows Security Event ID `4625` (An account failed to log on) to ensure visibility within administrative event logs.
 
-### 3. Web Application Security Assessment
+### 3. Web Application Security Assessment (Seperate Project)
 * **Objective:** Evaluate intentionally vulnerable web applications to identify, exploit, and document critical application-layer vulnerabilities.
 * **Implementation Details:**
   * Deploy an instance of **OWASP Juice Shop** within the network architecture to simulate a modern, production web application environment.
