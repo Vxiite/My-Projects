@@ -16,7 +16,7 @@ The topology uses a single gateway processing traffic across three distinct netw
 
 * **WAN Interface (em0):** Configured via NAT to access an external upstream path (simulating an external ISP gateway).
 * **LAN Segment (`hacker-net` / em1):** Subnet `192.168.1.0/24`. Host environment for the security auditing machine (**Kali Linux**). Inherits an implicit pass-all rule framework by default.
-* **OPT1 Segment (`victim-net` / em2):** Subnet `192.168.2.0/24`. Hosts the corporate production zone containing the Windows Server Active Directory Domain Controller (`DC01`) and the enterprise Ubuntu Workstation. Inherits an implicit deny ruleset.
+* **OPT1 Segment (`victim-net` / em2):** Subnet `192.168.10.0/24`. Hosts the corporate production zone containing the Windows Server Active Directory Domain Controller (`DC01`) and the enterprise Ubuntu Workstation. Inherits an implicit deny ruleset.
 
 ---
 
@@ -123,7 +123,7 @@ Execution of `ip a` on the Ubuntu client confirmed that interface `enp0s3` was a
 ip a
 ```
 
-Checking the pfSense physical console revealed that the `webConfigurator` dashboard was explicitly bound to the OPT1 address (`http://192.168.2.1`), remaining inaccessible from standard LAN networks while default block rules on OPT1 dropped reciprocal client traffic.
+Checking the pfSense physical console revealed that the `webConfigurator` dashboard was explicitly bound to the OPT1 address (`http://192.168.10.1`), remaining inaccessible from standard LAN networks while default block rules on OPT1 dropped reciprocal client traffic.
 
 ### 3. Engineering Remediation & Pivot Sequence
 
@@ -138,13 +138,13 @@ sudo ip addr flush dev enp0s3
 #### Manually register a static address within the OPT1 subnet
 
 ```bash
-sudo ip addr add 192.168.2.50/24 dev enp0s3
+sudo ip addr add 192.168.10.50/24 dev enp0s3
 ```
 
 #### Configure the default gateway
 
 ```bash
-sudo ip route add default via 192.168.2.1 dev enp0s3
+sudo ip route add default via 192.168.10.1 dev enp0s3
 ```
 
 With the interface provisionally listening, the Kali Linux workstation (located on the LAN segment) was used to bypass the isolated OPT1 constraints.
