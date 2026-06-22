@@ -33,7 +33,6 @@ Assigned static IPv4 addresses, subnet masks, and default gateways to all workst
 Implemented bi-directional static routes on both routers to enable communication between non-adjacent networks across the WAN link.
 
 **Router1**
-```bash
 ip route 192.168.10.0 255.255.255.0 10.0.0.1
 ip route 192.168.1.0 255.255.255.0 10.0.0.2
 
