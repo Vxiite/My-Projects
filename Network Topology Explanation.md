@@ -34,7 +34,7 @@ Implemented bi-directional static routes on both routers to enable communication
 
 **Router1**
 ip route 192.168.10.0 255.255.255.0 10.0.0.1
-ip route 192.168.1.0 255.255.255.0 10.0.0.2
+|| ip route 192.168.1.0 255.255.255.0 10.0.0.2
 
 ## Skills Demonstrated
 
