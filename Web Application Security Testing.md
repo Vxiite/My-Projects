@@ -222,4 +222,3 @@ The response exposed information relating to internal application logic used to 
 - Documented findings according to severity and business impact.
 - Assessed risks associated with insecure application design.
 - Produced structured security assessment documentation suitable for technical review.
-````
