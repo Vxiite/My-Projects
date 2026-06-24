@@ -1,4 +1,4 @@
-## OWASP Juice Shop Security Assessment Lab
+## OWASP Juice Shop Security Assessment Lab (IN PROGRESS STILL WANT TO DO MORE)
 
 ### Project Overview
 
