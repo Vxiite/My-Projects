@@ -239,4 +239,3 @@ The captured events demonstrate a classic horizontal reconnaissance pattern, whe
 - Conducted reconnaissance testing using Nmap.
 - Validated firewall detection and logging capabilities.
 - Analyzed network traffic patterns to identify scanning activity and potential security events.
-````
